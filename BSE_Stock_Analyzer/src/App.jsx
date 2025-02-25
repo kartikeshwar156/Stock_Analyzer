@@ -18,7 +18,14 @@ function App() {
         query,
       });
       console.log("API Response:", res.data);
-      setMessages((prevMessages) => [...prevMessages, res.data]);
+      const formattedResponse = res.data.response
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Convert **text** to bold
+        .replace(/\n\n/g, "<br/><br/>"); // Convert new lines
+        
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { query, response: formattedResponse },
+        ]);
       // axios.post('http://localhost:8080/query', {
       //   query,
       // })
@@ -58,9 +65,9 @@ function App() {
                 borderRadius: "5px",
               }}
             >
-              <strong>User:</strong> {msg.query}
+              <strong>User:</strong> <p>{msg.query}</p>
               <br />
-              <strong>Response:</strong> {msg.response}
+              <strong>Response:</strong> <p></p> <div dangerouslySetInnerHTML={{ __html: msg.response }} />
             </div>
           ))}
         </div>
