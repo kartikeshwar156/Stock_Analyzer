@@ -12,6 +12,7 @@ function App() {
 
     // const newMessage = { query, response: "Loading..." }; // automatically a key -"query" will be set to some value.
     // setMessages((prevMessages) => [newMessage, ...prevMessages]); // Show loading state
+    
 
     try {
       const res = await axios.post("http://localhost:8080/query", {
