@@ -13,6 +13,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages  # REQUIRED: This enables GitHub Pages deployment
+      url: ${{ steps.deployment.outputs.page_url }}  # Auto-generates URL
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
