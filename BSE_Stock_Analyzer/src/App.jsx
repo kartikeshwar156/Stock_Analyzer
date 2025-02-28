@@ -15,7 +15,7 @@ function App() {
     
 
     try {
-      const res = await axios.post("https://6753-2401-4900-1f27-ea90-8da-d844-78b-71ff.ngrok-free.app/query", {
+      const res = await axios.post("https://0d24-2401-4900-1f27-ea90-8da-d844-78b-71ff.ngrok-free.app/query", {
         query,
       });
       console.log("API Response:", res.data);
