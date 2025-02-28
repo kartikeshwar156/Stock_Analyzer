@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/BSE_Stock_Analyzer/", // Use your repository name here,
+  base: "/BSE_Stock_Analyzer/build/", // Use your repository name here,
   build: {
     outDir: "build" // Ensure Vite builds into dist/
   }
